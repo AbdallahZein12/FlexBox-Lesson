@@ -1,0 +1,45 @@
+* { /*Normalize your box model by creating a * selector(Selects all elements) and setting the box-sizing property to border-box.*/
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #EBE7E7;
+}
+
+.header {
+  text-align: center; /*Aligns header text in the center */
+  padding: 32px; /*gives a padding on all sides */
+  background: #E0DDDD; /*sets background color*/
+}
+
+#gallery {
+  display: flex; /*Flexbox is a one-dimensional CSS layout approach that focuses on the flow of content. It offers the ability to control the way items are spaced and aligned within a container.  To set an element to use Flexbox, you give it a display property set to flex. */
+  flex-direction: row; /*Flexbox can be thought of as having two axes, the main axis and the cross axis. The main axis is determined by the flex-direction property. If flex-direction is set to row or row-reverse, the main axis is horizontal. If flex-direction is set to column or column-reverse, the main axis is vertical.*/
+  flex-wrap: wrap; /*The flex-wrap property determines how your items should behave when the flex container is too small. Setting this property to wrap will allow your items to wrap to the next row/column (depending on your main axis), where nowrap will prevent your items from wrapping. When this is set to nowrap, items may either shrink to fit or overflow.*/
+  justify-content: center; /*The justify-content property determines how the items inside a flex container are positioned along the main axis, affecting their position and the space around them.*/
+  align-items: center;
+  padding: 0 4px;
+}
+
+#gallery img { /* #gallery img   selector to target all images.*/
+  width: 25%;
+  height: 300px;
+  object-fit: cover; /*Notice how some of the images have become distorted. This is because the images have different aspect ratios. Rather than setting each aspect ratio individually, you can use the object-fit property to determine how images should behave.Give your #gallery img selector the object-fit property and set it to cover. This will tell the image to fill the img container while maintaining aspect ratio, resulting in cropping to fit.*/
+  margin-top: 8px;
+  padding: 0 4px; /*Give your #gallery img selector a margin-top property of 8px and a padding property of 0 4px. to give some space between them vertically and horizontally */
+  border-radius: 10px; /*removes edges */
+}
+
+@media (max-width: 800px) { /* Created a media query for screens smaller than 800px in width. In that media query, created a #gallery img rule and set the width property to 50%. This will convert your gallery to a two-column layout. */
+  #gallery img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {      /* create another media query for screens smaller than 600px wide. In that media query, create a #gallery img rule and set the width property to 100%. This will give your gallery a single-column layout.*/             
+  #gallery img {                               
+    width:100%;
+  }
+}
